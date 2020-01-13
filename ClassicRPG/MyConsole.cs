@@ -9,7 +9,7 @@ namespace ClassicRPG
             WriteWrapper(text, foregroundColor, backgroundColor, Console.Write);
         }
 
-        public static void WriteLine(string text, ConsoleColor foregroundColor = ConsoleColor.White, ConsoleColor backgroundColor = ConsoleColor.Black)
+        public static void WriteLine(string text = "", ConsoleColor foregroundColor = ConsoleColor.White, ConsoleColor backgroundColor = ConsoleColor.Black)
         {
             WriteWrapper(text, foregroundColor, backgroundColor, Console.WriteLine);
         }

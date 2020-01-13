@@ -1,19 +1,15 @@
-﻿using System;
-
-namespace ClassicRPG
+﻿namespace ClassicRPG
 {
-    public class Action
+    public abstract class Action
     {
-        public string Text { get; set; }
+        public virtual string Name { get; }
 
-        public char Key { get; set; }
+        public virtual char Key { get; }
 
-        public Func<GameState, bool> CanSelect { get; set; } = gs => true;
+        public virtual bool CanSelect(GameState gameState) => true;
 
-        public string CannotSelectText { get; set; }
+        public virtual bool ShouldDisplay(GameState gameState) => true;
 
-        public Func<GameState, bool> ShouldDiplay { get; set; } = gs => true;
-
-        public ActionResult Result { get; set; }
+        public virtual void Do(GameState gameState) { }
     }
 }
