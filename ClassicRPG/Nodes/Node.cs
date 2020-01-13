@@ -1,8 +1,5 @@
-﻿using System;
+﻿using ClassicRPG.Enemies;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ClassicRPG.Nodes
 {
@@ -41,6 +38,32 @@ namespace ClassicRPG.Nodes
         {
             base.OnEnter(gameState, fromNode);
             MyConsole.WriteLine(Text);
+        }
+    }
+
+    public class CloseCombatHitTransition : Transition
+    {
+
+    }
+
+    public class FightEnemyNode : Node
+    {
+        public override void OnEnter(GameState gameState, Node fromNode)
+        {
+            base.OnEnter(gameState, fromNode);
+            
+            var enemy = new Enemy();
+            enemy.Generate(gameState, null);
+
+            
+        }
+    }
+
+    public static class Test
+    {
+        public static void Do()
+        {
+
         }
     }
 }
