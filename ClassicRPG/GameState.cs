@@ -2,7 +2,7 @@
 
 namespace ClassicRPG
 {
-    class GameState
+    public class GameState
     {
         public GameState()
         {

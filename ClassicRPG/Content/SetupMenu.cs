@@ -1,37 +1,70 @@
-﻿namespace ClassicRPG.Content
+﻿using ClassicRPG.Character;
+
+namespace ClassicRPG.Content
 {
     static class SetupMenu
     {
-        public static MenuActionResult CreateMenu() => new MenuActionResult
+        public static ActionResult CreateMenu() => new ActionResult
         {
             Text = "Добро пожаловать в текстовую RPG.",
             AvailableActions =
+            {
+                new Action
                 {
-                    new MenuAction
+                    Key = '1',
+                    Text = "Новая игра",
+                    Result = new ActionResult
                     {
-                        Key = '1',
-                        Text = "Новая игра",
-                        Result = new GameActionResult
+                        Text = Texts.NewGame1,
+                        Do = (gs) =>
                         {
-                            Text = "Началась игра",
-                            Do = (gs) =>
+                            gs.Reset();
+                        },
+                        AvailableActions =
+                        {
+                            new Action
                             {
-                                gs.Reset();
-                                gs.Character.Display();
-                            }
-                        }
-                    },
+                                Key = '1',
+                                Text = $"Узнать о классе '{new Warrior().DisplayName}'",
+                                Result = new ActionResult
+                                {
+                                    Text = "Воин это воин"
+                                }
+                            },
 
-                    new MenuAction
-                    {
-                        Key = '2',
-                        Text = "Выход",
-                        Result = new MenuActionResult
-                        {
-                            Do = gs => gs.IsPlaying = false,
+                            new Action
+                            {
+                                Key = '2',
+                                Text = $"Узнать о классе '{new Scoundrel().DisplayName}'",
+                                Result = new ActionResult
+                                {
+                                    Text = "Разбойник это разбойник"
+                                }
+                            },
+
+                            new Action
+                            {
+                                Key = '3',
+                                Text = $"Узнать о классе '{new Mage().DisplayName}'",
+                                Result = new ActionResult
+                                {
+                                    Text = "Маг это маг"
+                                }
+                            },
                         }
                     }
+                },
+
+                new Action
+                {
+                    Key = '2',
+                    Text = "Выход",
+                    Result = new ActionResult
+                    {
+                        Do = gs => gs.IsPlaying = false,
+                    }
                 }
+            }
         };
     }
 }

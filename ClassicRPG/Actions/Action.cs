@@ -2,7 +2,7 @@
 
 namespace ClassicRPG
 {
-    abstract class Action
+    class Action
     {
         public string Text { get; set; }
 

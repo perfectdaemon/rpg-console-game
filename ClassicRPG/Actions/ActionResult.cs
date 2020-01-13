@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ClassicRPG
 {
-    abstract class ActionResult
+    class ActionResult
     {
-        public string Text { get; set; }
+        public virtual string Text { get; set; }
 
         public Action<GameState> Do { get; set; } = gs => { };
 

@@ -44,13 +44,12 @@
   <ItemGroup>
     <Compile Include="Actions\Action.cs" />
     <Compile Include="Actions\ActionResult.cs" />
+    <Compile Include="Actions\FightActionResult.cs" />
     <Compile Include="Character\CharacterClass.cs" />
     <Compile Include="Character\CharacterState.cs" />
     <Compile Include="Content\SetupMenu.cs" />
-    <Compile Include="Actions\GameActionResult.cs" />
+    <Compile Include="Enemies\Enemy.cs" />
     <Compile Include="GameState.cs" />
-    <Compile Include="Actions\MenuAction.cs" />
-    <Compile Include="Actions\MenuActionResult.cs" />
     <Compile Include="Items\WeaponItem.cs" />
     <Compile Include="Items\Item.cs" />
     <Compile Include="MyConsole.cs" />
@@ -61,5 +60,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
