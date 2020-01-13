@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ClassicRPG
 {
-    class ActionResult
+    public class ActionResult
     {
         public virtual string Text { get; set; }
 

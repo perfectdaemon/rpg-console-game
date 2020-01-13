@@ -60,7 +60,7 @@ namespace ClassicRPG.Enemies
 
             var prefixes = Enum.GetValues(typeof(EnemyPrefix)).Cast<EnemyPrefix>().ToList();
 
-            var prefixCount = random.Next(prefixes.Count);
+            var prefixCount = random.Next(prefixes.Count + 1);
 
             for (var i = 0; i < prefixCount; ++i)
             {
@@ -71,7 +71,7 @@ namespace ClassicRPG.Enemies
 
             var suffixes = Enum.GetValues(typeof(EnemySuffix)).Cast<EnemySuffix>().ToList();
 
-            var suffixCount = random.Next(suffixes.Count);
+            var suffixCount = random.Next(suffixes.Count + 1);
 
             for (var i = 0; i < suffixCount; ++i)
             {
@@ -83,25 +83,6 @@ namespace ClassicRPG.Enemies
             var types = Enum.GetValues(typeof(EnemyType)).Cast<EnemyType>().ToList();
 
             Type = (EnemyType)random.Next(types.Count);
-        }
-    }
-
-    public static class Extensions
-    {
-        public static string GetDescription(this Enum self) => self.GetAttribute<DescriptionAttribute>().Description;
-
-        public static TAttributeType GetAttribute<TAttributeType>(this Enum self)
-        {
-            var enumType = self.GetType();
-
-            var fieldName = Enum.GetName(enumType, self);
-
-            var attr = enumType.GetField(fieldName)
-                .GetCustomAttributes(false)
-                .OfType<TAttributeType>()
-                .SingleOrDefault();
-
-            return attr;
         }
     }
 }

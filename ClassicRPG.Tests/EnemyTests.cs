@@ -1,6 +1,7 @@
-﻿using System;
-using ClassicRPG.Enemies;
+﻿using ClassicRPG.Enemies;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Diagnostics;
+using System.Threading;
 
 namespace ClassicRPG.Tests
 {
@@ -10,10 +11,13 @@ namespace ClassicRPG.Tests
         [TestMethod]
         public void TestGenerate()
         {
-            var enemy = new Enemy();
-            enemy.Generate(null, null);
-
-            Assert.IsNotNull(enemy.EnemyName);
+            for (int i = 0; i < 10; ++i)
+            {
+                Thread.Sleep(32);
+                var enemy = new Enemy();
+                enemy.Generate(null, null);
+                Debug.WriteLine(enemy.EnemyName);
+            }
         }
     }
 }

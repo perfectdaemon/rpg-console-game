@@ -49,6 +49,7 @@
     <Compile Include="Character\CharacterState.cs" />
     <Compile Include="Content\SetupMenu.cs" />
     <Compile Include="Enemies\Enemy.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="GameState.cs" />
     <Compile Include="Items\WeaponItem.cs" />
     <Compile Include="Items\Item.cs" />
